@@ -115,6 +115,9 @@ public class UsuarioService {
 				usuarioEncontrado = dao.buscarPor(loginGerado);
 				
 				if (usuarioEncontrado == null ) {
+					if (loginGerado.length() > 40) {
+						loginGerado = loginGerado.substring(0, 40);
+					}
 					return loginGerado ;
 				}		
 			
